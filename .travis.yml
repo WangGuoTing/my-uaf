@@ -1,0 +1,15 @@
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "uL2PLTz+HJWUzG6wbGJC/qmVVbR7D6U5umFCFrOyWFXvMHBgI2sF7Yn5prOUyBABeODWu56+7SW3+y2uD/Us27kMLzked4urAqR/SHqSFINWDAALa8FKFe3mNIgh4kCOcR7kNkQxNm4MMuyLRd+1YFegrDAdPTya3gslZQlzd7Y19DybrI3D/nAw4QSd4q9t2soUqcXEQU/yp2+LcyDeuyRfPZ3cHnVIzjMVoV/gFqSw9Uuf5i6SIWrzmK1plbnYzU4wJfMnLblgaeARCtj8DPbr5BoeMIwL/ybDoV84mu3wmbscz8eQTgdpv75nyOcgx1qnpGE7M/legQDXoKlGNJEGYwc8HeOIauC0ei1x6dunCD0i46oQwrZZFDicZ/y3wr1UFCE9LC9TErKK++6yc/gW2wRfgdPuyYAIB+QVHOylOzbM2laY9BmoOq8cEhbYLC9h1vA2oHWTL2q6pkosNYm0VS7QDlLGY2PMVNQXmUiBUTzV6Z5Ge/Ju/Wpyua/DBCjTT7sWYlvzSzG0Cj99WrGIGv7DfE21X+MbBn2O3suGAW83ijtqRM7UCxSKKwiy0VXWjtk5jRYTxNAabFmo2Ct3jVc2nO/ydEI6Euds2P9ufqeaS/hQFPG6FZrURSIYfi5NwPl/zvsaZlOfTYlWaj2BNPDPeEyhZjbuCSl9YJc="
+
+addons:
+  coverity_scan:
+    project:
+      name: "WangGuoTing/my-uaf"
+      description: "Build submitted via Travis CI"
+    notification_email: fill0209@gmail.com
+    build_command_prepend: "mvn clean"
+    build_command:   "mvn -DskipTests=true compile"
+    branch_pattern: coverity_scan
